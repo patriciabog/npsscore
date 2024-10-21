@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    /* Color de fondo suave */
+}
+
+.nps-scale {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    /* Sombra más suave */
+}
+
+/* Títulos */
+.test {
+    padding: 10px;
+    font-size: 38px;
+    color: #333;
+    /* Color oscuro para el texto */
+    text-align: center;
+    /* Centra el título */
+}
+
+.nps {
+    padding: 20px;
+    font-size: 18px;
+    /* Un poco más grande para mayor claridad */
+    color: #555;
+    /* Color gris más suave */
+}
+
+/* Estilo inicial para las estrellas no seleccionadas (gris) */
+.star_rating button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 5px;
+}
+
+.star_rating img {
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+    /* Estrellas no seleccionadas más claras */
+    transition: opacity 0.3s ease;
+    /* Transición suave */
+}
+
+/* Estrellas seleccionadas cambian a color amarillo */
+.star_rating .selected img {
+    opacity: 1;
+    /* Totalmente visibles */
+}
+
+/* Efecto hover para resaltar temporalmente las estrellas */
+.star_rating button:hover img {
+    opacity: 1;
+    /* Totalmente visibles al pasar el mouse */
+}
+
+/* Sección de preguntas de la encuesta */
+.survey-question {
+    font-size: 14px;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.survey-question p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+    /* Color de texto más oscuro */
+}
+
+/* Estilo para el grupo de checkboxes */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.checkbox-group label {
+    margin: 10px 0;
+    /* Espaciado entre las etiquetas */
+    font-size: 16px;
+    /* Aumentar el tamaño de la fuente */
+    color: #333;
+    /* Color oscuro para el texto */
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Área de texto para "Otro" */
+#otherText {
+    margin-left: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    width: calc(100% - 40px);
+    /* Ajustar el ancho */
+    min-height: 80px;
+    /* Altura mínima */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+/* Estilo del botón de envío */
+button[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    /* Color verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    /* Transición suave */
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+    /* Verde más oscuro al pasar el mouse */
+}
