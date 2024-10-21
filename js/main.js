@@ -1,5 +1,4 @@
 'use strict';
-
 // Esperamos a que el DOM se haya cargado completamente
 document.addEventListener('DOMContentLoaded', function () {
     // Seleccionamos las estrellas
@@ -7,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const otherCheckbox = document.getElementById('otherCheckbox');
     const otherText = document.getElementById('otherText');
     const form = document.getElementById('surveyForm');
+    const confirmationMessage = document.getElementById('confirmationMessage'); // Mensaje de confirmación
 
     // Asignamos los eventos de clic a cada estrella
     stars.forEach((star, index) => {
@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('input[name="aspect"]:checked').forEach(function (checkbox) {
             selectedAspects.push(checkbox.value);
         });
-
         // Si "Otro" está seleccionado, añadir el valor del campo de texto
         if (otherCheckbox.checked && otherText.value.trim() !== '') {
             selectedAspects.push('Otro: ' + otherText.value);
@@ -60,5 +59,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Mostrar los valores seleccionados en la consola (puedes procesarlos o enviarlos al servidor)
         console.log('Aspectos seleccionados:', selectedAspects);
+
+        // Mostrar mensaje de confirmación
+        confirmationMessage.style.display = 'block'; // Muestra el mensaje
+        confirmationMessage.textContent = 'Listo! Gracias por enviar tus respuestas.'; // Establece el texto del mensaje
+
+        // Reiniciar el formulario
+        form.reset();
+        highlightStars(0);
+
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(() => {
+            confirmationMessage.style.display = 'none';
+        }, 3000);
     });
 });

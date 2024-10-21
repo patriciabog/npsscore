@@ -60,12 +60,14 @@ body {
 .star_rating .selected img {
     opacity: 1;
     /* Totalmente visibles */
+    background-color: yellow;
 }
 
 /* Efecto hover para resaltar temporalmente las estrellas */
 .star_rating button:hover img {
     opacity: 1;
     /* Totalmente visibles al pasar el mouse */
+  
 }
 
 /* Sección de preguntas de la encuesta */
@@ -135,4 +137,28 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #45a049;
     /* Verde más oscuro al pasar el mouse */
+}
+.msg {
+    display: none;
+    /* Inicialmente oculto */
+    position: fixed;
+    /* Fija en la pantalla */
+    top: 50%;
+    /* Centrado verticalmente */
+    left: 50%;
+    /* Centrado horizontalmente */
+    transform: translate(-50%, -50%);
+    /* Ajuste para centrar completamente */
+    background-color: rgba(2, 36, 137, 0.76);
+    /* Fondo verde semitransparente */
+    color: white;
+    /* Color del texto */
+    font-size: 30px;
+    /* Tamaño de fuente */
+    padding: 20px;
+    /* Espaciado interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    z-index: 1000;
+    /* Asegúrate de que esté por encima de otros elementos */
 }
