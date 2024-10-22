@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // Enviar datos a Google Apps Script
-        fetch('https://script.google.com/macros/s/AKfycbxb0l_5fnModBiBNBF6GC57vyKmPxZww2k670Q9gGqBd0RVm3Ca-wTZnsZ5MsRL6BGv/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbzWrWf1qxFi1TcZ-t_nihwuGDkhWjEW4pUc9FA8XpXSDtBgGcb8bJYyfMlYKl_eE2Ze/exec', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
