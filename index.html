@@ -1,46 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>NPS-Score</title>
 </head>
+
 <body>
-<div class="nps-scale">
-    <h1 class="test">Encuesta de Satisfacción</h1>
-    <p class="nps">¿Cómo calificarías tu satisfacción general con Bairu.io?
-    <div class="star_rating">
-        <button class="star js-star1"><img src="./images/star.png" alt="1 estrella"></button>
-        <button class="star js-star2"><img src="./images/star.png" alt="2 estrellas"></button>
-        <button class="star js-star3"><img src="./images/star.png" alt="3 estrellas"></button>
-        <button class="star js-star4"><img src="./images/star.png" alt="4 estrellas"></button>
-        <button class="star js-star5"><img src="./images/star.png" alt="5 estrellas"></button>
+    <div class="nps-scale">
+        <h1 class="test">Encuesta de Satisfacción</h1>
+        <p class="nps">¿Cómo calificarías tu satisfacción general con Bairu.io?
+        <div class="star_rating">
+            <button class="star js-star1"><img src="./images/star.png" alt="1 estrella"></button>
+            <button class="star js-star2"><img src="./images/star.png" alt="2 estrellas"></button>
+            <button class="star js-star3"><img src="./images/star.png" alt="3 estrellas"></button>
+            <button class="star js-star4"><img src="./images/star.png" alt="4 estrellas"></button>
+            <button class="star js-star5"><img src="./images/star.png" alt="5 estrellas"></button>
+        </div>
+        <div class="survey-question">
+            <p>¿Qué aspectos de Bairu.io valoras más?</p>
+            <form id="surveyForm">
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="aspect" value="Facilidad de uso">Facilidad de uso
+                    </label>
+                    <label>
+                        <input type="checkbox" name="aspect" value="Calidad del soporte técnico">Calidad del soporte
+                        técnico
+                    </label>
+                    <label>
+                        <input type="checkbox" name="aspect" value="Precio">Precio
+                    </label>
+                    <label>
+                        <input type="checkbox" id="otherCheckbox" value="Otro">Otro
+                    </label>
+                    <textarea id="otherText" placeholder="Por favor especifica..." disabled></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="msg" id="confirmationMessage"></div>
+        </div>
     </div>
-    <div class="survey-question">
-        <p>¿Qué aspectos de Bairu.io valoras más?</p>
-        <form id="surveyForm">
-            <div class="checkbox-group">
-                <label for="">
-                    <input type="checkbox" name="aspect" value="Facilidad de uso">Facilidad de uso
-                </label>
-                <label for="">
-                    <input type="checkbox" name="aspect" value="Calidad del soporte técnico">Calidad del soporte técnico
-                </label>
-                <label for="">
-                    <input type="checkbox" name="aspect" value="Precio">Precio
-                </label>
-                <label for="">
-                    <input type="checkbox" id="otherCheckbox" value="Otro">Otro
-                </label>
-                <textarea id="otherText" placeholder="Por favor especifica..." disabled></textarea>
-            </div>
-            <!-- Botón de envío -->
-            <button type="submit">Enviar</button>
-        </form>
-        <div class="msg" id="confirmationMessage"></div>
-    </div>
-</div>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
