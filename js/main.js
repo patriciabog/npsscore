@@ -50,14 +50,16 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // Enviar datos a Google Apps Script
-        fetch('https://script.google.com/macros/s/AKfycbzWrWf1qxFi1TcZ-t_nihwuGDkhWjEW4pUc9FA8XpXSDtBgGcb8bJYyfMlYKl_eE2Ze/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbzlOCyo638jSyr9bbPl30e8WmmKI2XoRnaEVXB5-RmQM-J6C6jAnumTwDLGVPXTjJdD/exec', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify(data),
-            mode: 'no-cors'  // Opción que evita el bloqueo de CORS, pero con limitaciones
+            mode: 'no-cors'  // Opción para evitar el error CORS, pero no recibirás la respuesta
         })
-            .then(response => response.json())
-            .then(result => {
+            .then(() => {
+                // Muestra el mensaje de confirmación sin esperar respuesta
                 confirmationMessage.style.display = 'block';
                 confirmationMessage.textContent = '¡Listo! Gracias por enviar tus respuestas.';
                 form.reset();
