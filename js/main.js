@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // Enviar los datos a Google Apps Script
-        fetch('https://script.google.com/macros/s/AKfycbwhNG4ssF2-PALZZgnDpcFvjbdZqXW53j8Z-iQkyK8pTkIkBrqqbBk2g-sg5z5wvjyx/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbxb0l_5fnModBiBNBF6GC57vyKmPxZww2k670Q9gGqBd0RVm3Ca-wTZnsZ5MsRL6BGv/exec', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
