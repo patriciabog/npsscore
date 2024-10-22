@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch('https://script.google.com/macros/s/AKfycbzWrWf1qxFi1TcZ-t_nihwuGDkhWjEW4pUc9FA8XpXSDtBgGcb8bJYyfMlYKl_eE2Ze/exec', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
+            mode: 'no-cors'  // Opción que evita el bloqueo de CORS, pero con limitaciones
         })
             .then(response => response.json())
             .then(result => {
