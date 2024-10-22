@@ -1,4 +1,7 @@
 'use strict';
+// main.js
+
+'use strict';
 // Esperamos a que el DOM se haya cargado completamente
 document.addEventListener('DOMContentLoaded', function () {
     // Seleccionamos las estrellas
@@ -7,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const otherText = document.getElementById('otherText');
     const form = document.getElementById('surveyForm');
     const confirmationMessage = document.getElementById('confirmationMessage');
+    let selectedStars = 0; // Variable para almacenar la calificación de estrellas
 
     // Asignamos los eventos de clic a cada estrella
     stars.forEach((star, index) => {
@@ -16,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Función que se ejecuta cuando se hace clic en una estrella
     function handleClickStar(starValue) {
         console.log(`${starValue} estrella(s) seleccionada(s)`);
+        selectedStars = starValue; // Guardamos la calificación seleccionada
         highlightStars(starValue);  // Llamamos a la función para destacar las estrellas seleccionadas
     }
 
@@ -58,17 +63,40 @@ document.addEventListener('DOMContentLoaded', function () {
             selectedAspects.push('Otro: ' + otherText.value);
         }
 
-        // Mostrar los valores seleccionados en la consola (puedes procesarlos o enviarlos al servidor)
+        // Mostrar los valores seleccionados en la consola
         console.log('Aspectos seleccionados:', selectedAspects);
 
-        // Mostrar mensaje de confirmación
-        confirmationMessage.style.display = 'block';  // Muestra el mensaje
-        confirmationMessage.textContent = 'Listo! Gracias por enviar tus respuestas.'; // Establece el texto del mensaje
+        // Crear un objeto con los datos para enviar
+        const data = {
+            stars: selectedStars,
+            aspects: selectedAspects
+        };
 
-        // Reiniciar el formulario
-        form.reset();
-        highlightStars(0); // Reinicia la selección de estrellas
+        // Enviar los datos a Google Apps Script
+        fetch('https://script.google.com/macros/s/AKfycbz3v9PtssYlFKhK382NbRbSLAMgmMeM54gl9A3J4fz2qYiMBo59j9CUQChrfXf13W4o/exec', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // Convertir los datos a JSON
+        })
+            .then(response => response.json()) // Convertir la respuesta a JSON
+            .then(result => {
+                console.log('Respuesta del servidor:', result);
+                // Mostrar mensaje de confirmación
+                confirmationMessage.style.display = 'block';  // Muestra el mensaje
+                confirmationMessage.textContent = 'Listo! Gracias por enviar tus respuestas.'; // Establece el texto del mensaje
+
+                // Reiniciar el formulario
+                form.reset();
+                highlightStars(0); // Reinicia la selección de estrellas
+            })
+            .catch(error => {
+                console.error('Error al enviar los datos:', error);
+                alert('Hubo un problema al enviar tus respuestas. Intenta nuevamente.');
+            });
     });
 });
+
 
 
