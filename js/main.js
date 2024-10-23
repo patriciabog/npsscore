@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data),
-            mode: 'no-cors'  // Opción para evitar el error CORS, pero no recibirás la respuesta
+           
         })
             .then(() => {
                 // Muestra el mensaje de confirmación sin esperar respuesta
