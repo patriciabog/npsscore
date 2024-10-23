@@ -50,20 +50,30 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // Enviar datos a Google Apps Script
-        fetch('https://script.google.com/macros/s/AKfycbyZOun_ZH6zwqyiO1cUPdKoORPdFI0UjSaK5iYVsNU2KepA6BoJVzM6ut1m3JfHyQ/exec', {
+        // Enviar datos a Google Apps Script
+        fetch('https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbw0YJ3kwu12K_cKYnt6d8JKJjrNqjvPjYwFcyxYyzAB8lOmUQV7qQ_sJXANfY85jxZYrg/exec', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data),
-           
+            body: JSON.stringify(data)
         })
-            .then(() => {
-                // Muestra el mensaje de confirmación sin esperar respuesta
-                confirmationMessage.style.display = 'block';
-                confirmationMessage.textContent = '¡Listo! Gracias por enviar tus respuestas.';
-                form.reset();
-                highlightStars(0);
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la respuesta del servidor: ' + response.status);
+                }
+                return response.json();  // Parsear la respuesta a JSON si es exitosa
+            })
+            .then(data => {
+                // Verificar el resultado de la respuesta
+                if (data.result === 'success') {
+                    confirmationMessage.style.display = 'block';
+                    confirmationMessage.textContent = '¡Listo! Gracias por enviar tus respuestas.';
+                    form.reset();
+                    highlightStars(0);
+                } else {
+                    throw new Error('Hubo un problema al procesar los datos: ' + data.message);
+                }
             })
             .catch(error => {
                 console.error('Error al enviar los datos:', error);
