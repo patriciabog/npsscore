@@ -1,4 +1,5 @@
 'use strict';
+
 document.addEventListener('DOMContentLoaded', function () {
     const stars = document.querySelectorAll('.star');
     const otherCheckbox = document.getElementById('otherCheckbox');
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Usar proxy para enviar datos a Google Apps Script
         const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-        const targetUrl = 'https://script.google.com/macros/s/AKfycbxqez1g3wT1YSRes6TUgTE_eHsS8xZ8tlIsiSQschOApfAQN75_wtLp7Ja5mP2ExSqIIw/exec';
+        const targetUrl = 'https://script.google.com/macros/s/AKfycbyYtc15iPaT3R4m1_AikLjRlw4LuuLehcwVmeWp3t5rVK0Epx_oWMvIFVy3fdzI0i2T1g/exec';
 
         fetch(proxyUrl + targetUrl, {
             method: 'POST',
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.json();
             })
             .then(data => {
-                console.log('Parsed data:', data); 
+                console.log('Parsed data:', data);
                 if (data.result === 'success') {
                     confirmationMessage.style.display = 'block';
                     confirmationMessage.textContent = '¡Listo! Gracias por enviar tus respuestas.';
@@ -83,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     });
 });
-
 
 
 
