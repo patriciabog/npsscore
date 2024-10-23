@@ -49,9 +49,11 @@ document.addEventListener('DOMContentLoaded', function () {
             aspects: selectedAspects
         };
 
-        // Enviar datos a Google Apps Script
-        // Enviar datos a Google Apps Script
-        fetch('https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbw0YJ3kwu12K_cKYnt6d8JKJjrNqjvPjYwFcyxYyzAB8lOmUQV7qQ_sJXANfY85jxZYrg/exec', {
+        // Usar proxy para enviar datos a Google Apps Script
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const targetUrl = 'https://script.google.com/macros/s/AKfycbz5SD-7JAaG2LlMR1iGnFps0kuzPxC3YsJ_rWEyBoYCDBdJLAC2VwZdfgaerCFmIlsWbQ/exec';
+
+        fetch(proxyUrl + targetUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,10 +64,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!response.ok) {
                     throw new Error('Error en la respuesta del servidor: ' + response.status);
                 }
-                return response.json();  // Parsear la respuesta a JSON si es exitosa
+                return response.json();
             })
             .then(data => {
-                // Verificar el resultado de la respuesta
                 if (data.result === 'success') {
                     confirmationMessage.style.display = 'block';
                     confirmationMessage.textContent = '¡Listo! Gracias por enviar tus respuestas.';
