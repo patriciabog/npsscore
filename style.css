@@ -31,8 +31,8 @@ body {
 }
 
 .nps {
-    padding: 20px;
-    font-size: 18px;
+    padding: 10px;
+    font-size: 20px;
     /* Un poco más grande para mayor claridad */
     color: #555;
     /* Color gris más suave */
@@ -45,6 +45,16 @@ body {
     cursor: pointer;
     padding: 0;
     margin: 0 5px;
+}
+.star_rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* This centers the stars horizontally */
+    margin: 0 auto;
+    /* This ensures the entire star container is centered */
+    padding: 20px 0;
+    /* Optional padding to add space around the stars */
 }
 
 .star_rating img {
@@ -72,15 +82,15 @@ body {
 
 /* Sección de preguntas de la encuesta */
 .survey-question {
-    font-size: 14px;
+    font-size: 15px;
     margin: 20px 0;
     padding: 10px;
 }
 
 .survey-question p {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 10px;
-    color: #333;
+    color: #555;
     /* Color de texto más oscuro */
 }
 
