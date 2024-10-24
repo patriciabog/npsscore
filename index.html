@@ -10,8 +10,8 @@
 
 <body>
     <div class="nps-scale">
-        <h1 class="test">Encuesta de Satisfacción</h1>
-        <p class="nps">¿Cómo calificarías tu satisfacción general con AVIZ?
+        <h1 class="test">Customer Satisfaction Survey</h1>
+        <p class="nps">How would you rate your overall satisfaction with AVIZ?
         <div class="star_rating">
             <button class="star js-star1"><img src="./images/star.png" alt="1 estrella"></button>
             <button class="star js-star2"><img src="./images/star.png" alt="2 estrellas"></button>
@@ -20,26 +20,25 @@
             <button class="star js-star5"><img src="./images/star.png" alt="5 estrellas"></button>
         </div>
         <div class="survey-question">
-            <p>¿Qué aspectos de AVIZ valoras más?</p>
+            <p>Which aspects of AVIZ do you value the most?</p>
             <form id="surveyForm">
                 <div class="checkbox-group">
                     <label>
-                        <input type="checkbox" name="aspect" value="Facilidad de uso">Facilidad de uso
+                        <input type="checkbox" name="aspect" value="Facilidad de uso">Ease of Use
                     </label>
                     <label>
-                        <input type="checkbox" name="aspect" value="Calidad del soporte técnico">Calidad del soporte
-                        técnico
+                        <input type="checkbox" name="aspect" value="Calidad del soporte técnico">Technical Support Quality
                     </label>
                     <label>
-                        <input type="checkbox" name="aspect" value="Precio">Precio
+                        <input type="checkbox" name="aspect" value="Precio">Pricing
                     </label>
                 <label>
-                    <input type="checkbox" name="aspect" id="otherCheckbox" value="Otro">Otro
+                    <input type="checkbox" name="aspect" id="otherCheckbox" value="Otro">Other
                 </label>
-                <textarea id="otherText" placeholder="Por favor especifica..." disabled></textarea>
+                <textarea id="otherText" placeholder="Please specify..." disabled></textarea>
 
                 </div>
-                <button type="submit">Enviar</button>
+                <button type="submit">Submit</button>
             </form>
             <div class="msg" id="confirmationMessage"></div>
         </div>
