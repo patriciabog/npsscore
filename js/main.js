@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('Parsed data:', data);
                 if (data.result === 'success') {
                     confirmationMessage.style.display = 'block';
-                    confirmationMessage.textContent = '¡Listo! Gracias por enviar tus respuestas.';
+                    confirmationMessage.textContent = 'Completed! Thank you for submitting your responses.';
                     form.reset();
                     highlightStars(0);
                 } else {
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(error => {
                 console.error('Error al enviar los datos:', error);
-                alert('Hubo un problema al enviar tus respuestas. Intenta nuevamente.');
+                alert('There was a problem submitting your answers. Please try again.');
             });
     });
 });
